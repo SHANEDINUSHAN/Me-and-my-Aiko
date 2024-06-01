@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Website</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url("/Users/shanedinushan/Desktop/html project/love-theme-background-happy-valentine-s-day-mother-s-day-3d-couple-illustrations-modern-style_933530-11916.jpg.avif");
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #ff4d4d;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            text-align: center;
+        }
+        .modal-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Love Moments</h1>
+        <button id="show-pictures-button">Click Here Lina</button>
+        <div id="pictures-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <img src="/Users/shanedinushan/Desktop/html project/IMG_0323.JPG"> <!-- Replace with your downloaded picture 1 -->
+                <img src="/Users/shanedinushan/Desktop/html project/7E02DF1F-4236-458A-9C12-27D14045898B.jpeg"> <!-- Replace with your downloaded picture 2 -->
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const showPicturesButton = document.getElementById('show-pictures-button');
+            const modal = document.getElementById('pictures-modal');
+            const closeButton = document.querySelector('.close-button');
+
+            showPicturesButton.addEventListener('click', function() {
+                modal.style.display = "block";
+            });
+
+            closeButton.addEventListener('click', function() {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
